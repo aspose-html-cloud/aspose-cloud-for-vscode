@@ -1,0 +1,162 @@
+{
+    "name": "aspose-html-md-converter",
+    "displayName": "Aspose.HTML MD Converter",
+    "description": "Convert Markdown to PDF, HTML, JPG",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.41.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "icon": "images/icon.png",
+    "bugs": {
+        "url": "https://github.com/asposecloudmarketplace/aspose-html-md-converter-for-vscode/issues",
+        "email": "smcbreen@microsoft.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/asposecloudmarketplace/aspose-html-md-converter-for-vscode.git"
+    },
+    "activationEvents": [
+        "onCommand:extension.aspose-html-md-converter.exportSettings",
+        "onCommand:extension.aspose-html-md-converter.pdf",
+        "onCommand:extension.aspose-html-md-converter.html",
+        "onLanguage:markdown"
+    ],
+    "keywords": [
+        "markdown",
+        "pdf",
+        "export",
+        "convert"
+    ],
+    "main": "./extension.js",
+    "contributes": {
+        "commands": [{
+                "command": "extension.aspose-html-md-converter.pdf",
+                "title": "Aspose: Convert MD to PDF"
+            },
+            {
+                "command": "extension.aspose-html-md-converter.html",
+                "title": "Aspose: Convert MD to HTML"
+            },
+            {
+                "command": "extension.aspose-html-md-converter.exportSettings",
+                "title": "Aspose: Export Converter settings"
+            }
+        ],
+        "menus": {
+            "commandPalette": [{
+                    "when": "resourceLangId == markdown",
+                    "command": "extension.aspose-html-md-converter.exportSettings"
+                },
+                {
+                    "when": "resourceLangId == markdown",
+                    "command": "extension.aspose-html-md-converter.pdf"
+                },
+                {
+                    "when": "resourceLangId == markdown",
+                    "command": "extension.aspose-html-md-converter.html"
+                }
+            ],
+            "editor/context": [{
+                    "when": "resourceLangId == markdown",
+                    "command": "extension.aspose-html-md-converter.pdf",
+                    "group": "aspose-html-md-converter@1"
+                },
+                {
+                    "when": "resourceLangId == markdown",
+                    "command": "extension.aspose-html-md-converter.html",
+                    "group": "aspose-html-md-converter@2"
+                }
+            ]
+        },
+        "configuration": {
+            "type": "object",
+            "title": "Aspose.HTML MD Converter",
+            "properties": {
+                "aspose-html-md-converter.outputDirectory": {
+                    "type": "string",
+                    "default": ".",
+                    "description": "Place for output files"
+                },
+                "aspose-html-md-converter.paper.orientation": {
+                    "type": "string",
+                    "enum": [
+                        "portrait",
+                        "landscape"
+                    ],
+                    "default": "portrait",
+                    "description": "Paper orientation for PDF files. Portrait or Landscape."
+                },
+                "aspose-html-md-converter.paper.size": {
+                    "type": "string",
+                    "enum": [
+                        "A0",
+                        "A1",
+                        "A2",
+                        "A3",
+                        "A4",
+                        "A5",
+                        "A6",
+                        "Letter",
+                        "Legal",
+                        "Custom"
+                    ],
+                    "default": "A4",
+                    "description": "Paper Size [A0, A1, A2, A3, A4, A5, A6, Letter, Legal]. The value Custom means using options Width and Height instead Paper Size."
+                },
+                "aspose-html-md-converter.paper.width": {
+                    "type": "string",
+                    "default": "210mm",
+                    "description": "Paper Width, accepts values labeled with units(mm, cm, in, px)."
+                },
+                "aspose-html-md-converter.paper.height": {
+                    "type": "string",
+                    "default": "297mm",
+                    "description": "Paper Height, accepts values labeled with units(mm, cm, in, px)."
+                },
+                "aspose-html-md-converter.margin.top": {
+                    "type": "string",
+                    "default": "10mm",
+                    "description": "Top margin (units: mm, cm, in, px)."
+                },
+                "aspose-html-md-converter.margin.bottom": {
+                    "type": "string",
+                    "default": "10mm",
+                    "description": "Bottom margin (units: mm, cm, in, px)."
+                },
+                "aspose-html-md-converter.margin.right": {
+                    "type": "string",
+                    "default": "10mm",
+                    "description": "Right margin (units: mm, cm, in, px)."
+                },
+                "aspose-html-md-converter.margin.left": {
+                    "type": "string",
+                    "default": "10mm",
+                    "description": "Left margin (units: mm, cm, in, px)."
+                }
+            }
+        }
+    },
+    "scripts": {
+        "test": "node ./test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/glob": "^7.1.1",
+        "@types/mocha": "^5.2.7",
+        "@types/node": "^12.11.7",
+        "@types/vscode": "^1.41.0",
+        "eslint": "^6.6.0",
+        "glob": "^7.1.5",
+        "mocha": "^6.2.2",
+        "typescript": "^3.6.4",
+        "vscode-test": "^1.2.2"
+    },
+    "dependencies": {
+        "fs": "0.0.1-security",
+        "node-fetch": "^2.6.0",
+        "path": "^0.12.7",
+        "uuid": "^7.0.2"
+    }
+}
