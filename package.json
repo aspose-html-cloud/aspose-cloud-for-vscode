@@ -1,7 +1,7 @@
 {
     "name": "aspose-html-md-converter",
     "displayName": "Aspose.HTML MD Converter",
-    "description": "Convert Markdown to PDF, HTML, JPG",
+    "description": "Convert Markdown to PDF, HTML",
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.41.0"
@@ -9,10 +9,10 @@
     "categories": [
         "Other"
     ],
+    "publisher": "aspose-cloud-marketplace",
     "icon": "images/icon.png",
     "bugs": {
         "url": "https://github.com/asposecloudmarketplace/aspose-html-md-converter-for-vscode/issues",
-        "email": "smcbreen@microsoft.com"
     },
     "repository": {
         "type": "git",
