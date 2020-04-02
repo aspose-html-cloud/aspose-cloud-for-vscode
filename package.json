@@ -12,7 +12,8 @@
     "publisher": "aspose-cloud-marketplace",
     "icon": "images/icon.png",
     "bugs": {
-        "url": "https://github.com/asposecloudmarketplace/aspose-html-md-converter-for-vscode/issues"
+        "url": "https://forum.aspose.cloud/c/html",
+        "email": "support@aspose.cloud"
     },
     "repository": {
         "type": "git",
