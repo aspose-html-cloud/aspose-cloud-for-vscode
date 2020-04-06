@@ -76,14 +76,12 @@ async function convertMarkdown(option_type) {
     };
 
     let data = {
+        machineId: vscode.env.machineId,
         guid: uuidv4(),
         content: editor.document.getText(),
         to: option_type,
         paper: vscode.workspace.getConfiguration('aspose-html-md-converter')['paper']
     };
-
-
-
 
     // convert and export markdown to pdf, html
     try {

@@ -1,8 +1,8 @@
 {
     "name": "aspose-html-md-converter",
-    "displayName": "Aspose.HTML MD Converter",
+    "displayName": "Aspose.HTML Converter",
     "description": "Convert Markdown file to PDF document or HTML page",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "engines": {
         "vscode": "^1.41.0"
     },
@@ -17,7 +17,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/asposecloudmarketplace/aspose-html-md-converter-for-vscode.git"
+        "url": "https://github.com/asposecloudmarketplace/aspose-html-converter-for-vscode"
     },
     "activationEvents": [
         "onCommand:extension.aspose-html-md-converter.exportSettings",
