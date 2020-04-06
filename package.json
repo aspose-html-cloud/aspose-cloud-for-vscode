@@ -31,9 +31,11 @@
         "export",
         "convert"
     ],
+    "license": "MIT",
     "main": "./extension.js",
     "contributes": {
-        "commands": [{
+        "commands": [
+            {
                 "command": "extension.aspose-html-md-converter.pdf",
                 "title": "Aspose: Convert MD to PDF"
             },
@@ -47,7 +49,8 @@
             }
         ],
         "menus": {
-            "commandPalette": [{
+            "commandPalette": [
+                {
                     "when": "resourceLangId == markdown",
                     "command": "extension.aspose-html-md-converter.exportSettings"
                 },
@@ -60,7 +63,8 @@
                     "command": "extension.aspose-html-md-converter.html"
                 }
             ],
-            "editor/context": [{
+            "editor/context": [
+                {
                     "when": "resourceLangId == markdown",
                     "command": "extension.aspose-html-md-converter.pdf",
                     "group": "aspose-html-md-converter@1"
