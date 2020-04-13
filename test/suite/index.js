@@ -10,6 +10,7 @@ function run() {
 	// Use any mocha API
 	mocha.useColors(true);
 
+	mocha.timeout(20000);
 	const testsRoot = path.resolve(__dirname, '..');
 
 	return new Promise((c, e) => {
