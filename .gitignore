@@ -5,3 +5,4 @@ test/*.jpg
 test/*.json
 test/*.pdf
 test/*.jpeg
+test/suite/*.pdf

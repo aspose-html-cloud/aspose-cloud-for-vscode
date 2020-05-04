@@ -22,13 +22,16 @@ suite('Extension Test Suite', () => {
         fs.readFile(htmlFileName, (err, data) => {
             assert.equal(err, null);
             assert.ok(data[0].startsWith('<html>'));
+
         });
         fs.unlinkSync(htmlFileName);
 
         fs.readFile(pdfFileName, (err, data) => {
             assert.equal(err, null);
             assert.ok(data[0].startsWith('%PDF-'));
+
         });
         fs.unlinkSync(pdfFileName);
+
     });
 });

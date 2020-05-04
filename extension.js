@@ -47,9 +47,9 @@ function deactivate() {
 
 const apiURL = 'https://vscode-markdown-converter-750605.conholdate.cloud/api/markdown';
 /**
- * @param {string} option_type
+ * @param {string} conversionType
  */
-async function convertMarkdown(option_type) {
+async function convertMarkdown(conversionType) {
 
     // check active window         
     let editor = vscode.window.activeTextEditor;
@@ -77,9 +77,8 @@ async function convertMarkdown(option_type) {
 
     let data = {
         machineId: vscode.env.machineId,
-        guid: uuidv4(),
         content: editor.document.getText(),
-        to: option_type,
+        to: conversionType,
         paper: vscode.workspace.getConfiguration('aspose-html-md-converter')['paper']
     };
 
@@ -100,7 +99,7 @@ async function convertMarkdown(option_type) {
         });
 
         let outputDirectory = vscode.workspace.getConfiguration('aspose-html-md-converter')['outputDirectory'] || '.';
-        let outputFileName = mdfilename.replace(ext, '.' + option_type);
+        let outputFileName = mdfilename.replace(ext, '.' + conversionType);
         let outputFullPath = (outputDirectory !== '.') ? path.join(outputDirectory, path.basename(outputFileName)) : outputFileName;
         let blob = await response.blob();
         let readableStream = blob.stream().on('end', () => {

@@ -2,6 +2,10 @@
 
 ---
 
+## [0.03]
+
+- Removed guid field from converter options;
+
 ## [0.02]
 
 - Fixed converter options
