@@ -2,7 +2,7 @@
     "name": "aspose-html-md-converter",
     "displayName": "Aspose.HTML Converter",
     "description": "Convert Markdown file to PDF document or HTML page",
-    "version": "0.0.3",
+    "version": "0.0.5",
     "engines": {
         "vscode": "^1.41.0"
     },
