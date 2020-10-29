@@ -8,28 +8,28 @@ const { v4: uuidv4 } = require('uuid');
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
-    console.log('Aspose.HTML MD Converter is now active!');
+    console.log('Aspose Cloud for VSCode is now active!');
 
     let commandSet = [{
-            'commandId': 'extension.aspose-html-md-converter.pdf',
+            'commandId': 'extension.aspose-cloud.pdf',
             'callback': async function() {
                 await convertMarkdown('pdf')
             }
         },
         {
-            'commandId': 'extension.aspose-html-md-converter.html',
+            'commandId': 'extension.aspose-cloud.html',
             'callback': async function() {
                 await convertMarkdown('html')
             }
         },
         {
-            'commandId': 'extension.aspose-html-md-converter.jpg',
+            'commandId': 'extension.aspose-cloud.jpg',
             'callback': async function() {
                 await convertMarkdown('jpg')
             }
         },
         {
-            'commandId': 'extension.aspose-html-md-converter.exportSettings',
+            'commandId': 'extension.aspose-cloud.exportSettings',
             'callback': exportSettings
         },
     ];
@@ -79,14 +79,14 @@ async function convertMarkdown(conversionType) {
         machineId: vscode.env.machineId,
         content: editor.document.getText(),
         to: conversionType,
-        paper: vscode.workspace.getConfiguration('aspose-html-md-converter')['paper']
+        paper: vscode.workspace.getConfiguration('aspose-cloud')['paper']
     };
 
     // convert and export markdown to pdf, html
     try {
         let response = await vscode.window.withProgress({
             location: vscode.ProgressLocation.Notification,
-            title: "Aspose.HTML MD Converter",
+            title: "Aspose Cloud for VSCode",
             cancellable: false
         }, (progress) => {
             progress.report({ message: "Conversion in progress..." });
@@ -98,7 +98,7 @@ async function convertMarkdown(conversionType) {
             });
         });
 
-        let outputDirectory = vscode.workspace.getConfiguration('aspose-html-md-converter')['outputDirectory'] || '.';
+        let outputDirectory = vscode.workspace.getConfiguration('aspose-cloud')['outputDirectory'] || '.';
         let outputFileName = mdfilename.replace(ext, '.' + conversionType);
         let outputFullPath = (outputDirectory !== '.') ? path.join(outputDirectory, path.basename(outputFileName)) : outputFileName;
         let blob = await response.blob();
@@ -108,7 +108,7 @@ async function convertMarkdown(conversionType) {
         let writableStream = fs.createWriteStream(outputFullPath);
         readableStream.pipe(writableStream);
     } catch (err) {
-        vscode.window.showErrorMessage(`Aspose.HTML MD Converter: ${err.message}`);
+        vscode.window.showErrorMessage(`Aspose Cloud for VSCode: ${err.message}`);
         return;
     }
 }
@@ -117,17 +117,17 @@ async function convertMarkdown(conversionType) {
  * @description Export config to external file
  */
 function exportSettings() {
-    let outputDirectory = vscode.workspace.getConfiguration('aspose-html-md-converter')['outputDirectory'] || '.';
+    let outputDirectory = vscode.workspace.getConfiguration('aspose-cloud')['outputDirectory'] || '.';
     if (outputDirectory === '.') {
         outputDirectory = (vscode.workspace.workspaceFolders !== undefined) ?
             vscode.workspace.workspaceFolders[0].uri.fsPath :
             path.dirname(vscode.window.activeTextEditor.document.uri.fsPath);
     }
     let configFileName = path.join(outputDirectory, "aspose-html-converter-settings.json");
-    let jsonContent = JSON.stringify(vscode.workspace.getConfiguration('aspose-html-md-converter'));
+    let jsonContent = JSON.stringify(vscode.workspace.getConfiguration('aspose-cloud'));
     fs.writeFile(configFileName, jsonContent, 'utf8', function(err) {
         if (err) {
-            vscode.window.showErrorMessage(`Aspose.HTML MD Converter: ${err.message}`);
+            vscode.window.showErrorMessage(`Aspose Cloud for VSCode: ${err.message}`);
             return;
         }
         vscode.window.showInformationMessage(`Saved to: ${configFileName}`);

@@ -16,8 +16,8 @@ suite('Extension Test Suite', () => {
         const uri = vscode.Uri.file(mdFileName);
         const document = await vscode.workspace.openTextDocument(uri)
         await vscode.window.showTextDocument(document);
-        await vscode.commands.executeCommand('extension.aspose-html-md-converter.html');
-        await vscode.commands.executeCommand('extension.aspose-html-md-converter.pdf');
+        await vscode.commands.executeCommand('extension.aspose-cloud.html');
+        await vscode.commands.executeCommand('extension.aspose-cloud.pdf');
         await vscode.commands.executeCommand('workbench.action.closeActiveEditor');
         fs.readFile(htmlFileName, (err, data) => {
             assert.equal(err, null);
