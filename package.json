@@ -1,8 +1,8 @@
 {
-    "name": "aspose-html-md-converter",
-    "displayName": "Aspose.HTML Converter",
+    "name": "aspose-cloud",
+    "displayName": "Aspose Cloud for VSCode",
     "description": "Convert Markdown file to PDF document or HTML page",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "engines": {
         "vscode": "^1.41.0"
     },
@@ -17,12 +17,12 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/aspose-html-cloud/aspose-html-converter-for-vscode"
+        "url": "https://github.com/aspose-html-cloud/aspose-cloud-for-vscode"
     },
     "activationEvents": [
-        "onCommand:extension.aspose-html-md-converter.exportSettings",
-        "onCommand:extension.aspose-html-md-converter.pdf",
-        "onCommand:extension.aspose-html-md-converter.html",
+        "onCommand:extension.aspose-cloud.exportSettings",
+        "onCommand:extension.aspose-cloud.pdf",
+        "onCommand:extension.aspose-cloud.html",
         "onLanguage:markdown"
     ],
     "keywords": [
@@ -34,55 +34,58 @@
     "license": "MIT",
     "main": "./extension.js",
     "contributes": {
-        "commands": [{
-                "command": "extension.aspose-html-md-converter.pdf",
+        "commands": [
+            {
+                "command": "extension.aspose-cloud.pdf",
                 "title": "Aspose: Convert MD to PDF"
             },
             {
-                "command": "extension.aspose-html-md-converter.html",
+                "command": "extension.aspose-cloud.html",
                 "title": "Aspose: Convert MD to HTML"
             },
             {
-                "command": "extension.aspose-html-md-converter.exportSettings",
+                "command": "extension.aspose-cloud.exportSettings",
                 "title": "Aspose: Export Converter settings"
             }
         ],
         "menus": {
-            "commandPalette": [{
+            "commandPalette": [
+                {
                     "when": "resourceLangId == markdown",
-                    "command": "extension.aspose-html-md-converter.exportSettings"
+                    "command": "extension.aspose-cloud.exportSettings"
                 },
                 {
                     "when": "resourceLangId == markdown",
-                    "command": "extension.aspose-html-md-converter.pdf"
+                    "command": "extension.aspose-cloud.pdf"
                 },
                 {
                     "when": "resourceLangId == markdown",
-                    "command": "extension.aspose-html-md-converter.html"
+                    "command": "extension.aspose-cloud.html"
                 }
             ],
-            "editor/context": [{
+            "editor/context": [
+                {
                     "when": "resourceLangId == markdown",
-                    "command": "extension.aspose-html-md-converter.pdf",
-                    "group": "aspose-html-md-converter@1"
+                    "command": "extension.aspose-cloud.pdf",
+                    "group": "aspose-cloud@1"
                 },
                 {
                     "when": "resourceLangId == markdown",
-                    "command": "extension.aspose-html-md-converter.html",
-                    "group": "aspose-html-md-converter@2"
+                    "command": "extension.aspose-cloud.html",
+                    "group": "aspose-cloud@2"
                 }
             ]
         },
         "configuration": {
             "type": "object",
-            "title": "Aspose.HTML Converter",
+            "title": "Aspose Cloud",
             "properties": {
-                "aspose-html-md-converter.outputDirectory": {
+                "aspose-cloud.outputDirectory": {
                     "type": "string",
                     "default": ".",
                     "description": "Place for output files"
                 },
-                "aspose-html-md-converter.paper.orientation": {
+                "aspose-cloud.paper.orientation": {
                     "type": "string",
                     "enum": [
                         "portrait",
@@ -91,7 +94,7 @@
                     "default": "portrait",
                     "description": "Paper orientation for PDF files. Portrait or Landscape."
                 },
-                "aspose-html-md-converter.paper.size": {
+                "aspose-cloud.paper.size": {
                     "type": "string",
                     "enum": [
                         "A0",
@@ -108,32 +111,32 @@
                     "default": "A4",
                     "description": "Paper Size [A0, A1, A2, A3, A4, A5, A6, Letter, Legal]. The value Custom means using options Width and Height instead Paper Size."
                 },
-                "aspose-html-md-converter.paper.width": {
+                "aspose-cloud.paper.width": {
                     "type": "string",
                     "default": "210mm",
                     "description": "Paper Width, accepts values labeled with units(mm, cm, in, px)."
                 },
-                "aspose-html-md-converter.paper.height": {
+                "aspose-cloud.paper.height": {
                     "type": "string",
                     "default": "297mm",
                     "description": "Paper Height, accepts values labeled with units(mm, cm, in, px)."
                 },
-                "aspose-html-md-converter.margin.top": {
+                "aspose-cloud.margin.top": {
                     "type": "string",
                     "default": "10mm",
                     "description": "Top margin (units: mm, cm, in, px)."
                 },
-                "aspose-html-md-converter.margin.bottom": {
+                "aspose-cloud.margin.bottom": {
                     "type": "string",
                     "default": "10mm",
                     "description": "Bottom margin (units: mm, cm, in, px)."
                 },
-                "aspose-html-md-converter.margin.right": {
+                "aspose-cloud.margin.right": {
                     "type": "string",
                     "default": "10mm",
                     "description": "Right margin (units: mm, cm, in, px)."
                 },
-                "aspose-html-md-converter.margin.left": {
+                "aspose-cloud.margin.left": {
                     "type": "string",
                     "default": "10mm",
                     "description": "Left margin (units: mm, cm, in, px)."

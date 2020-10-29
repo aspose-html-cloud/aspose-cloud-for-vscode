@@ -1,6 +1,6 @@
-# Aspose.HTML Converter
+# Aspose.Cloud for VSCode
 
-Aspose.HTML Converter is built with [Aspose.HTML Cloud](https://products.aspose.cloud/html/family)
+Aspose.Cloud for VSCode is built with [aspose.cloud](https://www.aspose.cloud/)
 Converter allows converting Markdown to HTML and PDF format.
 
 ## Features
@@ -15,7 +15,7 @@ By default, all actions run in the current directory.
 
 ## Requirements
 
-We use the `node-fetch` module to makes [API calls](https://docs.aspose.cloud/display/htmlcloud/).
+We use the `node-fetch` module to make [API calls](https://docs.aspose.cloud/display/htmlcloud/).
 
 ## Usage
 
@@ -43,22 +43,16 @@ We use the `node-fetch` module to makes [API calls](https://docs.aspose.cloud/di
 
 Markdown Converter contributes the following settings:
 
-* `aspose-html-md-converter.outputDirectory`: Location for output files. Default is `.` (current).
-* `aspose-html-md-converter.paper.orientation`: Paper orientation for PDF files. Accepted values `Portrait` or `Landscape`.
-* `aspose-html-md-converter.paper.size`: Paper Size [`A0`, `A1`, `A2`, `A3`, `A4`, `A5`, `A6`, `Letter`, `Legal`]. The value `Custom` means using options `Width` and `Height` instead Paper Size.
-* `aspose-html-md-converter.paper.width`: Paper Width, accepts values labeled with units(mm, cm, in, px).
-* `aspose-html-md-converter.paper.height`: Paper Height, accepts values labeled with units(mm, cm, in, px).
-* `aspose-html-md-converter.margin.top`: Top margin (units: mm, cm, in, px).
-* `aspose-html-md-converter.margin.bottom`: Bottom margin (units: mm, cm, in, px).
-* `aspose-html-md-converter.margin.right`: Right margin (units: mm, cm, in, px).
-* `aspose-html-md-converter.margin.left`: Left margin (units: mm, cm, in, px)."
+* `aspose-cloud.outputDirectory`: Location for output files. Default is `.` (current).
+* `aspose-cloud.paper.orientation`: Paper orientation for PDF files. Accepted values `Portrait` or `Landscape`.
+* `aspose-cloud.paper.size`: Paper Size [`A0`, `A1`, `A2`, `A3`, `A4`, `A5`, `A6`, `Letter`, `Legal`]. The value `Custom` means using options `Width` and `Height` instead Paper Size.
+* `aspose-cloud.paper.width`: Paper Width, accepts values labeled with units(mm, cm, in, px).
+* `aspose-cloud.paper.height`: Paper Height, accepts values labeled with units(mm, cm, in, px).
+* `aspose-cloud.margin.top`: Top margin (units: mm, cm, in, px).
+* `aspose-cloud.margin.bottom`: Bottom margin (units: mm, cm, in, px).
+* `aspose-cloud.margin.right`: Right margin (units: mm, cm, in, px).
+* `aspose-cloud.margin.left`: Left margin (units: mm, cm, in, px)."
 
 ## Known Issues
 
 * MD-to-PDF conversion: The `@page` CSS at-rule can be applied incorrectly.
-
-## Release Notes
-
-### 0.0.1
-
-Initial release of Aspose.HTML Markdown Converter
