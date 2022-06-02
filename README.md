@@ -56,3 +56,11 @@ Markdown Converter contributes the following settings:
 ## Known Issues
 
 * MD-to-PDF conversion: The `@page` CSS at-rule can be applied incorrectly.
+
+## Workflow
+
+In order to make changes in the repository, you need to:
+
+1. Create a branch with the proposed changes whose name matches the feature/* pattern.
+2. Create a pull request for this branch. It will be automatically assigned to a suitable reviewer.
+3. Once the request is approved, it can be merged.
